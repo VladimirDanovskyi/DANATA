@@ -1,0 +1,30 @@
+.image {
+    background-image: url("img/colage.jpg");
+}
+a:hover {
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+    text-decoration-color: black;
+}
+a:visited{
+    text-decoration: none;
+    color: black;
+}
+a{
+    color: black;
+}
+
+.dashList {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: x-large;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.position{
+    margin-left: 2%;
+    float:left;
+    width:25%;
+
+
+}
