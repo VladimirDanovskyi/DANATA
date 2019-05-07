@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Admin on 01.03.2017.
  */
 public class TestAbKindDao {
-   static AbstractApplicationContext context =  new FileSystemXmlApplicationContext("C:/Users/Admin/Desktop/DANATA/web/WEB-INF/spring/applicationContext.xml");
+   static AbstractApplicationContext context =  new FileSystemXmlApplicationContext("C:/DaNaTa/web/WEB-INF/spring/applicationContext.xml");
     // InstructorDAOImpl  inst =(InstructorDAOImpl) context.getBean("ins");
      static AbonementKindServiceImpl abk=(AbonementKindServiceImpl) context.getBean("AbonementKindServiceImpl");
     static TrainDirectioServiceImpl tds=(TrainDirectioServiceImpl) context.getBean("traindsi");

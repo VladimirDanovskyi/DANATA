@@ -17,7 +17,7 @@ public class TestDao {
 
 
     public static void main(String[] args) {
-    AbstractApplicationContext context =  new FileSystemXmlApplicationContext("C:/Users/Admin/Desktop/DANATA/web/WEB-INF/spring/applicationContext.xml");
+    AbstractApplicationContext context =  new FileSystemXmlApplicationContext("C:/DaNaTa/web/WEB-INF/spring/applicationContext.xml");
        // InstructorDAOImpl  inst =(InstructorDAOImpl) context.getBean("ins");
         InstructorServiceImpl inst =(InstructorServiceImpl) context.getBean("InstServDaoImpl");
        AbonementKindServiceImpl abk=(AbonementKindServiceImpl) context.getBean("AbonementKindServiceImpl");

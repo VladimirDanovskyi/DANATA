@@ -28,63 +28,62 @@ public class TrainDirectionController {
     TrainDirectionService trainDirectionService;
 
     @RequestMapping("/train_direction_list")
-    public String trainDirectionList(ModelMap model){
-        String valid="актуальний";
-        List<Traindirections>traindirectionsList =trainDirectionService.findAll();
-        for(Traindirections traindirections:traindirectionsList){
-            if(traindirections.getValid()==true){
-              valid="актульний";
-            }else {
-               valid="не актуальний";
+    public String trainDirectionList(ModelMap model) {
+        String valid = "актуальний";
+        List<Traindirections> traindirectionsList = trainDirectionService.findAll();
+        for (Traindirections traindirections : traindirectionsList) {
+            if (traindirections.getValid() == true) {
+                valid = "актульний";
+            } else {
+                valid = "не актуальний";
             }
         }
-        model.addAttribute("train_direction_list",traindirectionsList);
+        model.addAttribute("train_direction_list", traindirectionsList);
         return "directions/direction_list";
     }
 
     @RequestMapping("/train_direct_Change/{id}")
-    public String   changeTrainDirection(@PathVariable ("id") Integer id, Model model){
-        Traindirections traindirections=trainDirectionService.getById(id);
-model.addAttribute("trainDirection", traindirections );
+    public String changeTrainDirection(@PathVariable("id") Integer id, Model model) {
+        Traindirections traindirections = trainDirectionService.getById(id);
+        model.addAttribute("trainDirection", traindirections);
 
         return "directions/change_direction";
     }
 
-    @RequestMapping(value = "changeTrainDirection",method = RequestMethod.POST)
-    public String change( @ModelAttribute ("trainDirection") Traindirections traindirections )
-    {
+    @RequestMapping(value = "changeTrainDirection", method = RequestMethod.POST)
+    public String change(@ModelAttribute("trainDirection") Traindirections traindirections) {
 
         trainDirectionService.changeEtity(traindirections);
         return "redirect:train_direction_list";
     }
 
-    @RequestMapping("/viewAddTrainDirection" )
-    public String viewAdd(@ModelAttribute ("trainDirection") Traindirections traindirections){
+    @RequestMapping("/viewAddTrainDirection")
+    public String viewAdd(@ModelAttribute("trainDirection") Traindirections traindirections) {
         return "/directions/train_direct_add";
     }
+
     @RequestMapping("/addTraindirection")
-    public String addDirection(@ModelAttribute("trainDirection") Traindirections traindirections){
+    public String addDirection(@ModelAttribute("trainDirection") Traindirections traindirections) {
         traindirections.setDateCreate(new Date());
         trainDirectionService.add(traindirections);
         return "redirect:train_direction_list";
     }
 
 
-
     @RequestMapping("/deleteTrainDirect/{id}")
-            public String deleteDirect(@PathVariable ("id") Integer id){
-       trainDirectionService.delete(trainDirectionService.getById(id));
+    public String deleteDirect(@PathVariable("id") Integer id) {
+        trainDirectionService.delete(trainDirectionService.getById(id));
 
-            return "/directions/train_dir_delredir";
-            }
+        return "/directions/train_dir_delredir";
+    }
 
     @RequestMapping("/abonementKindsOfTrainDirection/{id}")
-    public String abKindsOfTrainDirection(@PathVariable("id") Integer id, ModelMap model){
+    public String abKindsOfTrainDirection(@PathVariable("id") Integer id, ModelMap model) {
 
-        model.addAttribute("trainDirection",trainDirectionService.getById(id) );
+        model.addAttribute("trainDirection", trainDirectionService.getById(id));
 
         return "/directions/abonement_kinds_of_direction";
 
-        }
+    }
 
 }

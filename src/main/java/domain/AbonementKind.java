@@ -27,8 +27,7 @@ public class AbonementKind implements Serializable {
     }
 
     @Id
-    @SequenceGenerator(name ="abk_id",sequenceName = "public.\"AbonementKinds_id_seq\"",allocationSize = 0)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "abk_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
 

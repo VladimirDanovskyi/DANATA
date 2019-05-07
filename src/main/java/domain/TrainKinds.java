@@ -10,8 +10,7 @@ import java.util.Date;
 @Table(name = "trainkinds")
 public class TrainKinds {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "tr_seq")
-    @SequenceGenerator(name = "tr_seq",sequenceName = "pulic.\"TrainDirection_id_seq\"",allocationSize = 0)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
 

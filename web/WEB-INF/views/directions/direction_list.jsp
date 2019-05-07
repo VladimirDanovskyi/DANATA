@@ -42,12 +42,12 @@
     <h1 class="text-center positionH_withWide_buttom" >Перелік напрямків   </h1>
     <a href="/viewAddTrainDirection" class="positionbutWide c">Створити напрямок</a>
     <div>
-        <table class=" table table-hover table-bordered table-striped text-center">
+        <table class="table table-hover table-bordered table-striped text-center ">
             <thead>
-            <tr>
-                <td>Назва напрямку</td>
-                <td>Дата створення</td>
-                <td>Актуальність напрямку</td>
+            <tr class="warning">
+                <th>Назва напрямку</th>
+                <th>Дата створення</th>
+                <th>Актуальність напрямку</th>
             </tr>
 
             </thead>
@@ -61,7 +61,7 @@
                             <td><a href="/train_direct_Change/${direction.id}">актуальний</a></td>
                         </c:when>
                         <c:when test="${direction.valid ne true}">
-                            <td><a href="/train_direct_Change/${direction.id}"> не актуальний</a></td>
+                            <td><a href="/train_direct_Change/${direction.id}">не актуальний</a></td>
                         </c:when>
                     </c:choose>
                 </tr>

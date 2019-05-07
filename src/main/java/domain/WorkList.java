@@ -10,8 +10,7 @@ import java.util.Date;
 @Table(name = "worklist")
 public class WorkList {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "work_seq")
-    @SequenceGenerator(name = "work_seq",sequenceName = "public.worklist_id_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)

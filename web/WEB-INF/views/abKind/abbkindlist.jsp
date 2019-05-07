@@ -44,10 +44,10 @@
         <table class=" table table-hover table-bordered table-striped text-center">
         <thead>
         <tr>
-            <td>Назва абонементу</td>
-            <td>Кількість тренувань</td>
-            <td>Напрямок</td>
-            <td>Дата створення </td>
+            <th>Назва абонементу</th>
+            <th>Кількість тренувань</th>
+            <th>Напрямок</th>
+            <th>Дата створення </th>
 
         </tr>
 

@@ -11,8 +11,7 @@ package domain;
 public class Instructor {
     @Id
     @Column(name="id")
-    @SequenceGenerator(name = "instr_seq", sequenceName = "public.\"Instructors_id_seq\"", allocationSize = 0)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "instr_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private  Integer id;
 
     @Column (name = "trainkindid")

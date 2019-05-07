@@ -10,8 +10,7 @@ import java.util.Date;
 @Table(name = "visitinglist")
 public class VisitingList {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "visit_seq")
-    @SequenceGenerator(name = "visit_seq", sequenceName = "public.visitinglist_id_seq",allocationSize = 0)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToOne(cascade= {CascadeType.REFRESH}, fetch=FetchType.LAZY)

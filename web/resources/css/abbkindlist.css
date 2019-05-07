@@ -1,7 +1,7 @@
 input{
-    outline: none;
+     outline: none;
      border: none;
-    text-align: center;
+     text-align: center;
 }
 .c {
     border: 1px solid #333; /* Рамка */
@@ -21,4 +21,6 @@ input{
 .stvor{
     margin-left: 10%;
 }
+
+
 

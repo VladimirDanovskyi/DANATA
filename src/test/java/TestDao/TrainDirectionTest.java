@@ -13,7 +13,7 @@ import java.util.Date;
  * Created by Admin on 09.03.2017.
  */
 public class TrainDirectionTest {
-    static AbstractApplicationContext context =  new FileSystemXmlApplicationContext("C:/Users/Admin/Desktop/DANATA/web/WEB-INF/spring/applicationContext.xml");
+    static AbstractApplicationContext context =  new FileSystemXmlApplicationContext("C:/DaNaTa/web/WEB-INF/spring/applicationContext.xml");
     private  static TrainDirectioServiceImpl serv = (TrainDirectioServiceImpl)context.getBean("traindsi");
    private static AbonementKindServiceImpl abk=(AbonementKindServiceImpl) context.getBean("AbonementKindServiceImpl");
 

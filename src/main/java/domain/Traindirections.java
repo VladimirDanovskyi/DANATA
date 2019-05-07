@@ -1,8 +1,5 @@
 package domain;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import org.hibernate.annotations.GeneratorType;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -25,8 +22,7 @@ public class Traindirections implements Serializable {
 
 
     @Id
-    @SequenceGenerator(name = "tr_dir", sequenceName = "public.traindirections_id_seq",allocationSize = 0)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tr_dir")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (name = "id")
     public Integer getId() {
         return id;
