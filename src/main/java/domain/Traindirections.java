@@ -18,8 +18,15 @@ public class Traindirections implements Serializable {
     private Date dateCreate;
     private Boolean valid;
 
+    public Traindirections(String name, Date dateCreate, Boolean valid) {
 
+        this.name = name;
+        this.dateCreate = dateCreate;
+        this.valid = valid;
+    }
 
+    public Traindirections() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

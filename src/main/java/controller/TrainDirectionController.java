@@ -1,21 +1,18 @@
 package controller;
 
 import domain.Traindirections;
+import java.util.Collections;
+import java.util.Comparator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
-import org.springframework.jdbc.IncorrectResultSetColumnCountException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import service.serviceInterface.TrainDirectionService;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -26,20 +23,54 @@ import java.util.List;
 public class TrainDirectionController {
     @Autowired
     TrainDirectionService trainDirectionService;
+    private List<Traindirections> traindirectionList;
 
-    @RequestMapping("/train_direction_list")
+       @RequestMapping("/train_direction_list")
     public String trainDirectionList(ModelMap model) {
-        String valid = "актуальний";
-        List<Traindirections> traindirectionsList = trainDirectionService.findAll();
-        for (Traindirections traindirections : traindirectionsList) {
-            if (traindirections.getValid() == true) {
-                valid = "актульний";
-            } else {
-                valid = "не актуальний";
-            }
-        }
-        model.addAttribute("train_direction_list", traindirectionsList);
+
+           if (traindirectionList == null) {
+               traindirectionList = trainDirectionService.findAll();
+
+           }
+
+        model.addAttribute("train_direction_list", traindirectionList);
         return "directions/direction_list";
+
+    }
+
+
+
+    @RequestMapping("/train_direction_sort_list/{columnName}")
+    public String trainDirectionSortedList(@PathVariable("columnName") String columnName, Model model) {
+        if (traindirectionList == null) {
+            traindirectionList = trainDirectionService.findAll();
+
+        }
+
+        switch(columnName) {
+            case "name":
+                /*if (traindirectionsList.get(0).equals(name)) {
+                    traindirectionsList.sort(Comparator.comparing(a -> a.getName()));
+                }*/
+
+                traindirectionList.sort(Comparator.comparing(a -> a.getName()));
+                //reverse
+                Collections.sort(traindirectionList, Comparator.comparing(Traindirections :: getName).reversed());
+                model.addAttribute("train_direction_list", traindirectionList);
+                break;
+            case "createDate":
+                traindirectionList.sort(Comparator.comparing(a -> a.getDateCreate()));
+                model.addAttribute("train_direction_list", traindirectionList);
+                break;
+            case "valid":
+                traindirectionList.sort(Comparator.comparing(a -> a.getValid()));
+                model.addAttribute("train_direction_list", traindirectionList);
+                break;
+            default:
+                break;
+        }
+
+        return "redirect:http://localhost:8080/train_direction_list";
     }
 
     @RequestMapping("/train_direct_Change/{id}")

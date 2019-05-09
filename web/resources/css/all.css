@@ -7,16 +7,19 @@
     width: 100%;
 }
 .positionbut{
+    text-align: center;
     margin-top: 2.5%;
     margin-right: 12%;
+    margin-bottom: 1.5%;
     float:right;
     width:8%;
 
 }
 .positionbutWide{
+    text-align: center;
     margin-top: 2.5%;
     margin-right: 12%;
-    margin-bottom: 5%;
+    margin-bottom: 1.5%;
     float:right;
     width:15%;
 
@@ -31,6 +34,73 @@
     float: left;
     width: 42%;
 }
-.aroundTableBorder{
-    border-radius:10px;
+
+.table-curved {
+    border-collapse: separate;
 }
+.table-curved {
+    border: solid #ccc 1px;
+    border-radius: 6px;
+    border-left:0px;
+}
+.table-curved td, .table-curved th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+.table-curved th {
+    border-top: none;
+}
+.table-curved th:first-child {
+    border-radius: 6px 0 0 0;
+}
+.table-curved th:last-child {
+    border-radius: 0 6px 0 0;
+}
+.table-curved th:only-child{
+    border-radius: 6px 6px 0 0;
+}
+.table-curved tr:last-child td:first-child {
+    border-radius: 0 0 0 6px;
+}
+.table-curved tr:last-child td:last-child {
+    border-radius: 0 0 6px 0;
+}
+
+
+
+
+.table-create-curved {
+    border-collapse: separate;
+}
+.table-create-curved {
+    border: solid #ccc 1px;
+    border-radius: 8px;
+    border-left:0px;
+}
+.table-create-curved td {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+.table-create-curved tr:first-child td:first-child {
+    border-top: none;
+    border-radius: 8px 0 0 0;
+}
+.table-create-curved tr:first-child td:last-child {
+    border-top: none;
+    border-radius: 0 8px 0 0;
+}
+
+.table-create-curved tr:last-child td:first-child {
+    border-radius: 0 0 0 8px;
+}
+.table-create-curved tr:last-child td:last-child {
+    border-radius: 0 0 8px 0;
+}
+
+.input {
+    width: 100%;
+    background-color: #fafdf8;
+}
+
+

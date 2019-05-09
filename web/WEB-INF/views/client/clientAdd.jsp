@@ -51,23 +51,22 @@
 
 
     <form:form  method="POST" action="addClient" commandName="client">
-        <table class="table tabBorderRound table-hover table-bordered table-striped text-center">
+        <table class="table table-create-curved table-hover table-striped text-center">
             <tr>
                 <td><form:label path="fn"> ім'я</form:label></td>
-                <td><form:input path="fn"/></td>
+                <td><form:input path="fn" type="text" cssClass="input"/></td>
             </tr>
-
             <tr>
                 <td><form:label path="mn">по батькові</form:label></td>
-                <td><form:input path="mn"/></td>
+                <td><form:input path="mn" type="text" cssClass="input"/></td>
             </tr>
             <tr>
                 <td><form:label path="ln">фамілія</form:label></td>
-                <td><form:input path="ln"/></td>
+                <td><form:input path="ln" type="text" cssClass="input"/></td>
             </tr>
             <tr>
                 <td><form:label path="profesion">професія</form:label></td>
-                <td><form:input path="profesion"/></td>
+                <td><form:input path="profesion" type="text" cssClass="input"/></td>
             </tr>
 
             <tr>
@@ -78,7 +77,7 @@
             </tr>
             <tr>
                 <td><form:label path="comment">коментарій</form:label></td>
-                <td ><form:input path="comment"/></td>
+                <td ><form:input path="comment" type="text" cssClass="input"/></td>
             </tr>
             <tr>
                 <td><form:label path="sex">стать</form:label></td>

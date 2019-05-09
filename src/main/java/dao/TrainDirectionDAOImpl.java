@@ -17,7 +17,7 @@ public class TrainDirectionDAOImpl extends AbstractDao implements TrainDirection
 
     @Override
     public List<Traindirections> findAll() {
-        return getSession().createQuery("from Traindirections " ).list();
+        return getSession().createQuery("from Traindirections").list();
     }
 
     @Override
